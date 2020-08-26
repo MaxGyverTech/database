@@ -9,6 +9,7 @@ from database import DB
 db = DB('data',debug=True)
 
 #кортеж со столбцами таблици тире их типом данных
+#посмотреть можно тут http://unetway.com/tutorial/sqlite-type-data/
 tabledict = {
     'name':'TEXT',
     'id':'BIGINT'
