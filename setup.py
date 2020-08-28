@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="database-MaxGyverTech", # Replace with your own username
+    name="gyver-database", # Replace with your own username
     version="0.1.0",
     author="MaxGyverTech",
     author_email="maksimfadeenko2@gmail.com",
