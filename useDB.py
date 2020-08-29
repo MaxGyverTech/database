@@ -2,7 +2,7 @@
 #упрощение оспользования баз данных, by MaxGyverTech  
 import sqlite3
 
-from database import DB
+from database.database import DB
 
 #создать БД
 #(название файла, нужен ли вывод к терминал(по умолчанию False))
@@ -17,7 +17,6 @@ tabledict = {
 #создать таблицу    
 #(имя таблицы, кортеж структуры таблицы)
 db.createTable(table='users',structure=tabledict)
-
 #проверить еслть ли такая запись в таком то столбце, возвращает false true
 #(столбец, значение для поиска)
 if db.havewrite('id',str(0)) == False:
