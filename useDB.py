@@ -6,7 +6,7 @@ from database.database import DB
 
 #создать БД
 #(название файла, нужен ли вывод к терминал(по умолчанию False))
-db = DB('data',debug=True)
+db = DB('data.db',debug=True)
 
 #кортеж со столбцами таблици тире их типом данных
 #посмотреть можно тут http://unetway.com/tutorial/sqlite-type-data/
@@ -78,5 +78,13 @@ print(db.getall())
 
 # UPD 28.08: пакет упакован и загружен в PyPi !!!
 
+# UPD 31.08: добавлен метод получения столбцов, это было трудно
+print(db.getcolumns())\
 
-print(db.getcolumns())
+# UPD 31.08: добавлен метод для получения списка таблиц, пришлось попотеть
+print(db.gettables())
+
+# UPD 31.08: добавлен метод установки таблицы по умолчанию, по умолчанию она уже устонавливается при создании
+db.setdefaulttable('users')
+
+# много где добавлен и исправлен debug

@@ -5,7 +5,7 @@ class DB():
     
     def __init__(self,dbname:str,debug=False):
         
-        self.db = sqlite3.connect(dbname+'.db')
+        self.db = sqlite3.connect(dbname)
         self.sql = self.db.cursor()
         self.debug = debug
         if self.debug == True:
@@ -32,6 +32,18 @@ class DB():
         if self.debug == True:
             print(query)
         self.db.commit()
+
+    def gettables(self):
+        query = 'SELECT name FROM sqlite_master WHERE type = "table"'
+        self.sql.execute(query)
+        if self.debug == True:
+            print(query)
+        return self.sql.fetchall()
+    
+    def setdefaulttable(self,table: str):
+        self.table= table
+        if self.debug == True:
+            print('setted default: '+table)
 
     def havewrite(self, column:str,value,table=None):
         if table == None:
@@ -94,7 +106,10 @@ class DB():
     def getall(self,table=None):
         if table == None:
             table = self.table
-        self.sql.execute('SELECT * FROM '+table)
+        query = 'SELECT * FROM '+table
+        self.sql.execute(query)
+        if self.debug == True:
+            print(query)
         return self.sql.fetchall()
 
     def getline(self,idvalue,idcolumn,getval=None,returnone = True,table = None):
@@ -105,6 +120,8 @@ class DB():
         query = 'SELECT {0} FROM {1} WHERE {2} = "{3}"'.format(getval,table,idcolumn,idvalue)
 
         self.sql.execute(query)
+        if self.debug == True:
+            print(query)
         if returnone == True:
             return self.sql.fetchone()
         else:
@@ -113,6 +130,8 @@ class DB():
         if table == None:
             table = self.table
         names = list(map(lambda x: x[0], self.sql.description))
+        if self.debug == True:
+            print(names)
         return names
 
     

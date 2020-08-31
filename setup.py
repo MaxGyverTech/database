@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="gyver-database", # Replace with your own username
-    version="0.1.0",
+    version="0.2.0",
     author="MaxGyverTech",
     author_email="maksimfadeenko2@gmail.com",
     description="A small example package",
