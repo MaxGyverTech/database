@@ -109,6 +109,11 @@ class DB():
             return self.sql.fetchone()
         else:
             return self.sql.fetchall()
+    def getcolumns(self,table = None):
+        if table == None:
+            table = self.table
+        names = list(map(lambda x: x[0], self.sql.description))
+        return names
 
     
 
