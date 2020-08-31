@@ -129,9 +129,11 @@ class DB():
     def getcolumns(self,table = None):
         if table == None:
             table = self.table
-        names = list(map(lambda x: x[0], self.sql.description))
+        query = 'SELECT * FROM ' + table
+        self.sql.execute(query)
+        names = [member[0] for member in self.sql.description]
         if self.debug == True:
-            print(names)
+            print(query)
         return names
 
     

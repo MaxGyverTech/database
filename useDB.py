@@ -79,7 +79,7 @@ print(db.getall())
 # UPD 28.08: пакет упакован и загружен в PyPi !!!
 
 # UPD 31.08: добавлен метод получения столбцов, это было трудно
-print(db.getcolumns())\
+print(db.getcolumns(table='users'))
 
 # UPD 31.08: добавлен метод для получения списка таблиц, пришлось попотеть
 print(db.gettables())

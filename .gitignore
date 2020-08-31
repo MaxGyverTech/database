@@ -1,3 +1,5 @@
 /dist
 data.db
 .gitignore
+/gyver_database.egg-info
+/database/__pycache__
