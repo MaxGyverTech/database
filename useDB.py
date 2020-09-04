@@ -92,4 +92,11 @@ db.setdefaulttable('users')
 # МЫ НЕ УКАЗЫВАЛИ ЭТОТ СТОЛБЕЦ А ОН ЕСТЬ
 print(db.getline(1,'rowid')) 
 
+# UPD 04.09 для getall добавлен параметр value
+print(db.getall(value='name'))
 
+# UPD 05.09 удаление таблицы
+db.createTable('abc',tabledict) # автоматически ставится по умолучанию
+db.del_teable()
+db.createTable('cba',tabledict)
+db.del_teable(table='cba')

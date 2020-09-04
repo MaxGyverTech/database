@@ -40,6 +40,15 @@ class DB():
             print(query)
         return self.sql.fetchall()
     
+    def del_teable(self,table = ''):
+        if table == '':
+            table = self.table
+        query = 'DROP TABLE IF EXISTS {}'.format(table)
+        self.sql.execute(query)
+        if self.debug == True:
+            print(query)
+        self.db.commit()
+
     def setdefaulttable(self,table: str):
         self.table= table
         if self.debug == True:
