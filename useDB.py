@@ -88,3 +88,8 @@ print(db.gettables())
 db.setdefaulttable('users')
 
 # много где добавлен и исправлен debug
+
+# МЫ НЕ УКАЗЫВАЛИ ЭТОТ СТОЛБЕЦ А ОН ЕСТЬ
+print(db.getline(1,'rowid')) 
+
+

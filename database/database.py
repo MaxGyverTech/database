@@ -103,10 +103,10 @@ class DB():
             print(query)
         self.db.commit()
 
-    def getall(self,table=None):
+    def getall(self,value='*',table=None):
         if table == None:
             table = self.table
-        query = 'SELECT * FROM '+table
+        query = f'SELECT {value} FROM '+table
         self.sql.execute(query)
         if self.debug == True:
             print(query)
