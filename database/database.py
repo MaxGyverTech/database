@@ -2,7 +2,6 @@ import sqlite3
 
 
 class DB():
-    
     def __init__(self,dbname:str,debug=False):
         
         self.db = sqlite3.connect(dbname)
@@ -11,7 +10,6 @@ class DB():
         if self.debug == True:
             print('init good')
         
-
     def createTable(self, table: str,structure: dict):
         self.table = table
         self.columns = structure
