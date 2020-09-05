@@ -18,7 +18,7 @@ pip install gyver-database --update
 from database.database import DB
 ```
 
-Документацию она же инструкция смотреть в [useDB]()
+Документацию она же инструкция смотреть в [useDB](https://github.com/MaxGyverTech/database/blob/master/useDB.py)
 
 ```
 python useDB.py
