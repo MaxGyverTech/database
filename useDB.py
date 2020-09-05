@@ -100,3 +100,10 @@ db.createTable('abc',tabledict) # автоматически ставится п
 db.del_teable()
 db.createTable('cba',tabledict)
 db.del_teable(table='cba')
+
+db.setdefaulttable('users')
+
+print(db.getcolumns())
+# UPD 05.09 добавлен метод получения типа данных столбца
+print(db.getcolumnstype())
+# полность переработан метод получения типов столбцов

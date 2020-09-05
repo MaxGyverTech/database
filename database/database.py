@@ -138,9 +138,28 @@ class DB():
     def getcolumns(self,table = None):
         if table == None:
             table = self.table
-        query = 'SELECT * FROM ' + table
+        query = 'PRAGMA table_info({})'.format(table)
         self.sql.execute(query)
-        names = [member[0] for member in self.sql.description]
+        names = [i[1] for i in self.sql.fetchall()]
+        # names = self.sql.fetchall()
+        if self.debug == True:
+            print(query)
+        return names
+        # if table == None:
+        #     table = self.table
+        # query = 'SELECT * FROM ' + table
+        # self.sql.execute(query)
+        # names = [member[0] for member in self.sql.description]
+        # if self.debug == True:
+        #     print(query)
+        # return names
+    def getcolumnstype(self,table = None):
+        if table == None:
+            table = self.table
+        query = 'PRAGMA table_info({})'.format(table)
+        self.sql.execute(query)
+        names = [i[2] for i in self.sql.fetchall()]
+        # names = self.sql.fetchall()
         if self.debug == True:
             print(query)
         return names
