@@ -3,3 +3,4 @@ data.db
 .gitignore
 /gyver_database.egg-info
 /database/__pycache__
+ws.code-workspace

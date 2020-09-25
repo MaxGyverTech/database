@@ -3,7 +3,12 @@ import sqlite3
 
 class DB():
     def __init__(self,dbname:str,debug=False):
-        
+        """Создать или открыть объект БД
+
+        Args:\n
+            dbname (str): Имя БД, с расширением,как полный так и относительный путь.
+            debug (bool, optional): Вывод сгенерированого SQL в консоль для дебага. Defaults to False.
+        """
         self.db = sqlite3.connect(dbname)
         self.sql = self.db.cursor()
         self.debug = debug
@@ -11,6 +16,12 @@ class DB():
             print('init good')
         
     def createTable(self, table: str,structure: dict):
+        """Создать новую таблицу, если такая уже есть то просто ничего не произойдёт
+
+        Args:\n
+            table (str): Имя новой таблицы
+            structure (dict): словарь {'название поля':'его тип'}
+        """
         self.table = table
         self.columns = structure
         query = 'CREATE TABLE IF NOT EXISTS '
