@@ -80,6 +80,15 @@ class DB:
             return True
 
     def write(self, *data, table=None):
+        """
+        Запись в таблицу
+
+        Args:
+
+            data(args): данные для записи через запятую
+            table(str): имя таблицы
+
+        """
         if table is None:
             table = self.table
 
